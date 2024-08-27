@@ -85,7 +85,7 @@ export default function Header() {
       </div>
       {/* navbar */}
       <nav
-        className={`w-full bg-[#30344d] h-[70px] hidden md:block transition-all duration-1000 delay-300 shadow-md ${
+        className={`w-full bg-[#30344d] h-[70px] hidden md:block transition-all duration-300 delay-300 shadow-md ${
           scroll ? "top-0  h-[70px]" : ""
         } ${menuOpen ? Styles.my_name : ""}`}
       >

@@ -3,7 +3,7 @@ import React from "react";
 export default function Experience() {
   return (
     <section className="w-full bg-exp md:bg-fixed bg-no-repeat bg-center bg-cover">
-      <div className="w-full max-w-[1200px] pt-16 md:pt-32 mx-auto px-4 md:px-12 border-2 border-red-900">
+      <div className="w-full max-w-[1200px] pt-16 md:pt-32 mx-auto px-4 md:px-12">
         <div>
           <div className="pb-16">
             <div className="text-center p-3 max-w-[630px] mx-auto">
