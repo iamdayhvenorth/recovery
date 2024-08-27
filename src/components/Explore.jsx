@@ -1,4 +1,4 @@
-import explore from "../assets/explore.jpg";
+import explore from "/assets/explore.jpg";
 import { FaCheck } from "react-icons/fa";
 
 export default function Explore() {
