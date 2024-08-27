@@ -1,5 +1,5 @@
 import React from "react";
-import line from "/assets/chart-project-home-5.png";
+import line from "/images/chart-project-home-5.png";
 import Accordion from "./Accordion";
 
 export default function About() {
