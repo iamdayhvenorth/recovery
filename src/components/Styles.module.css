@@ -56,4 +56,5 @@
   top: -100px;
   left: 0;
   width: 100%;
+  z-index: 99;
 }

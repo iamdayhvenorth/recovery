@@ -4,7 +4,7 @@ import { FaCheck } from "react-icons/fa";
 export default function Explore() {
   return (
     <section className="w-full">
-      <div className="border-2 border-red-700 w-full max-w-[1200px] mx-auto py-16 md:pt-32 px-4 md:px-12">
+      <div className=" w-full max-w-[1200px] mx-auto py-16 md:pt-32 px-4 md:px-12">
         <div className="flex flex-col lg:flex-row justify-center lg:items-center gap-4">
           {/* left content */}
           <div className="p-2 h-full w-full lg:w-1/2 flex-shrink">

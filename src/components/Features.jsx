@@ -3,7 +3,7 @@ import { HiOutlineRocketLaunch } from "react-icons/hi2";
 export default function Features() {
   return (
     <section className="w-full">
-      <div className="w-full max-w-[1200px] mx-auto py-14 md:py-32 px-4 md:px-12 border-2 border-red-900">
+      <div className="w-full max-w-[1200px] mx-auto py-14 md:py-32 px-4 md:px-12">
         {/* Grid Section */}
         <div>
           <div className="text-center py-2">
