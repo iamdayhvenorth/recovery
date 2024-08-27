@@ -1,6 +1,5 @@
-import { MoveDown, MoveUp } from "lucide-react";
 import { useState } from "react";
-import { FaArrowUp, FaArrowDown, FaArrowRight } from "react-icons/fa6";
+import { FaArrowUp, FaArrowRight } from "react-icons/fa6";
 import { accordion } from "../data";
 
 export default function () {
