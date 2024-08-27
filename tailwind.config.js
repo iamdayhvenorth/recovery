@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       backgroundImage : {
-        "hero" : "url('./src/assets/banner.jpg')",
-        "exp" : "url('./src/assets/bg1-value.jpg')",
+        "hero" : "url('/images/banner.jpg')",
+        "exp" : "url('/images/bg1-value.jpg')",
       },
       fontFamily: {
         'prata': ["prata","sans-serif"],

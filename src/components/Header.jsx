@@ -1,4 +1,4 @@
-import logo from "../assets/mlogo.png";
+import logo from "/images/mlogo.png";
 import { useState, useEffect } from "react";
 import { Phone, MapPin, Clock3, Menu, Search, ChevronDown } from "lucide-react";
 import Styles from "./Styles.module.css";
