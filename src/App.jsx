@@ -5,6 +5,9 @@ import Features from "./components/Features";
 import Experience from "./components/Experience";
 import Explore from "./components/Explore";
 import About from "./components/About";
+import Services from "./components/Services";
+import Testimonials from "./components/Testimonials";
+import TestimonialCard from "./components/TestimonialCard";
 
 export default function App() {
   return (
@@ -16,6 +19,8 @@ export default function App() {
         <Experience />
         <Explore />
         <About />
+        <Services />
+        <Testimonials />
       </main>
     </>
   );

@@ -24,7 +24,7 @@ export default function () {
             }`}
             onClick={() => handleClick(idx)}
           >
-            <h3 className="capitalize">exceptional client service</h3>
+            <h3 className="capitalize">{item.title}</h3>
             {selected === idx ? <FaArrowUp /> : <FaArrowRight />}
           </div>
           <div
@@ -34,9 +34,7 @@ export default function () {
           >
             <div className="px-5 pt-5 pb-3">
               <p className="text-base text-white font-normal font-open-sans ">
-                Our team of experts are trained to always put the interest of
-                the client first. This has endeared us to many of our clients
-                who trust us, you can also trust us too.
+                {item.content}
               </p>
             </div>
           </div>

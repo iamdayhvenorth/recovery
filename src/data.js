@@ -1,17 +1,43 @@
+import avatar_1 from "/images/testi1.png";
+import avatar_2 from "/images/testi2.png";
+import avatar_3 from "/images/testi3.png";
+
 export const accordion = [
     {
-      question: "Exceptional client service",
-      answer:
+      title: "Exceptional client service",
+      content:
         "Our team of experts are trained to always put the interest of the client first. This has endeared us to many of our clients who trust us, you can also trust us too.",
     },
     {
-      question: "Professionalism and reliability",
-      answer:
-        "We strive to provide excellent service and maintain a high level of professionalism. Our team of skilled professionals is committed to ensuring that our clients receive the best possible service.",
+      title: "A Great Team and Winning Culture",
+      content:
+        "We are a recovery intelligence firm committed to helping you recover your money at the shortest possible time frame and with the most cost effective approach.",
     },
     {
-      question: "Customer satisfaction",
-      answer:
-        "We believe in building strong relationships with our clients. Our goal is to provide excellent service and customer satisfaction, so that our clients continue to trust us.",
+      title: "A Commitment to Integrity, Fairness",
+      content:
+        "In healthy companies, changing directions or satisfying clients means combining underlying strengths and capacities with new energy and support.",
     },
   ];
+
+  export const testimonial = [
+    {
+      name: "Oliver Simson",
+      description: "I’m so grateful I came in contact with MAFG RIA Service, they were able to recover my money . I highly recommend them. Done in time. I really appreciate the timely help. You should try them too.",
+      image: avatar_1,
+      amount_recovered: "$162k Recovered"
+    },
+    {
+      name: "Oliver Simson",
+      description: "I’m so grateful I came in contact with MAFG RIA Service, they were able to recover .",
+      image: avatar_2,
+      amount_recovered: "$162k Recovered"
+    },
+    {
+      name: "Oliver Simson",
+      description: "I’m so grateful I came in contact with MAFG RIA Service, they were able to recover my money . I highly recommend them. Done in time. I really appreciate the timely help. You should try them too.",
+      image: avatar_3,
+      amount_recovered: "$162k Recovered"
+    },
+
+  ]
