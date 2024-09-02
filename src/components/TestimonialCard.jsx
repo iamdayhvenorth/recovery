@@ -29,7 +29,7 @@ export default function TestimonialCard() {
 
   return (
     // testimonial card container
-    <div className=" flex  w-full">
+    <div className=" flex w-full">
       {testimonial.map((item, idx) => (
         <div
           className={`flex flex-col w-full items-center gap-6 p-4 border-2 border-red-900 flex-1  absolute  bg-[#30344d] overflow-hidden   pointer-events-none ] transition duration-[2000ms] ${
