@@ -5,6 +5,7 @@ import { IoCall } from "react-icons/io5";
 import { IoIosCall } from "react-icons/io";
 import { MdLocationOn } from "react-icons/md";
 import map from "/images/map-footer.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -30,12 +31,12 @@ export default function Footer() {
               <div className="flex gap-3">
                 <MdLocationOn className="text-[#52c5b6] text-3xl" />
                 <div>
-                  <a
-                    href="#"
+                  <Link
+                    to={"/"}
                     className="font-open-sans font-normal text-base text-[#c0c1c2]"
                   >
                     Visit Us Daily
-                  </a>
+                  </Link>
                   <p className="mt-2 font-inter text-base font-medium">
                     102 Gaither Dr, Mt Laurel Township, NJ 08054, USA.
                   </p>
@@ -43,14 +44,14 @@ export default function Footer() {
               </div>
 
               <div className="flex gap-3">
-                <IoIosCall className="text-[#52c5b6] text-3xl" />
+                <IoIosCall className="text-[#52c5b6] text-2xl" />
                 <div>
-                  <a
-                    href="#"
+                  <Link
+                    to={"/"}
                     className="font-open-sans font-normal text-base text-[#c0c1c2]"
                   >
                     Have Any Questions?
-                  </a>
+                  </Link>
                   <p className="mt-2 font-inter text-base font-medium">
                     +1 (201) 298-3873
                   </p>
@@ -58,14 +59,14 @@ export default function Footer() {
               </div>
 
               <div className="flex gap-3">
-                <IoIosSend className="text-[#52c5b6] text-3xl" />
+                <IoIosSend className="text-[#52c5b6] text-2xl" />
                 <div>
-                  <a
-                    href="#"
+                  <Link
+                    to={"/"}
                     className="font-open-sans font-normal text-base text-[#c0c1c2]"
                   >
                     Mail Us
-                  </a>
+                  </Link>
                   <p className="mt-2 font-inter text-base font-medium">
                     contact@mafgriainc.com
                   </p>
