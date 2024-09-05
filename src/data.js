@@ -41,3 +41,28 @@ export const accordion = [
     },
 
   ]
+
+
+  export const links = [
+    {
+      title: "Home",
+      path: "/",
+    },
+    {
+      title: "Recovery Services",
+      path: "/services",
+    },
+    {
+      title: "About Us",
+      path: "/about",
+    },
+    {
+      title: "Blog",
+      path: "/blog",
+    },
+    {
+      title: "Contacts",
+      path: "/contact",
+    },
+
+  ]

@@ -58,3 +58,7 @@
   width: 100%;
   z-index: 20;
 }
+
+.animate {
+  animation: rotate 2s infinite linear;
+}

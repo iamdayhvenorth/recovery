@@ -6,6 +6,7 @@ import { IoIosCall } from "react-icons/io";
 import { MdLocationOn } from "react-icons/md";
 import map from "/images/map-footer.png";
 import { Link } from "react-router-dom";
+import Search from "./Search";
 
 export default function Footer() {
   return (

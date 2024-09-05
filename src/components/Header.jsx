@@ -1,8 +1,18 @@
 import logo from "/images/mlogo.png";
 import { useState, useEffect } from "react";
-import { Phone, MapPin, Clock3, Menu, Search, ChevronDown } from "lucide-react";
+import {
+  Phone,
+  MapPin,
+  Clock3,
+  Menu,
+  Search as SearchIcon,
+  ChevronDown,
+} from "lucide-react";
 import Styles from "./Styles.module.css";
 import { Link } from "react-router-dom";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { links } from "../data";
+import Search from "./Search";
 
 export default function Header() {
   const [scroll, setScroll] = useState(false);
@@ -88,13 +98,13 @@ export default function Header() {
           </div>
 
           <div className=" p-1  md:hidden flex items-center gap-3">
-            <Search className="cursor-pointer" />
+            <SearchIcon className="cursor-pointer" />
             <Menu className="cursor-pointer" onClick={handleToggle} />
           </div>
         </div>
       </div>
 
-      {/* mobile view sidebar */}
+      {/* overlay */}
       {showSideBar && (
         <div
           className="fixed top-0 left-0 w-full h-screen bg-black/60 z-40 md:hidden cursor-pointer"
@@ -102,17 +112,36 @@ export default function Header() {
         />
       )}
 
-      <div
-        className={`fixed top-0  w-1/2 bg-white z-50 h-full md:hidden transition-[right] duration-500 ease-in-out ${
+      {/* mobile view sidebar */}
+      <nav
+        className={`fixed top-0  w-[310px] bg-white z-50 h-full md:hidden transition-[right] duration-500 ease-in-out p-5 ${
           showSideBar ? "right-0 " : "right-[-1000px]"
         }`}
       >
         <div>
-          <ul>
-            <li>Home</li>
+          <span className="block mb-3">
+            <FaArrowRightLong
+              className="cursor-pointer transition-colors duration-300 hover:text-[#52c5b6]"
+              onClick={() => setShowSideBar(false)}
+            />
+          </span>
+          <ul className="w-full flex flex-col">
+            {links.map((link, idx) => (
+              <li
+                className="list-item border-b border-black/10 font-inter text-sm font-medium"
+                key={idx}
+              >
+                <Link
+                  to={link.path}
+                  className="w-full block py-3 transition-colors duration-300 hover:text-[#52c5b6]"
+                >
+                  {link.title}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
-      </div>
+      </nav>
 
       {/* navbar */}
       <nav
@@ -123,53 +152,29 @@ export default function Header() {
         <div className="w-full h-full max-w-[1200px] mx-auto   px-6">
           <div className="w-full h-full  px-6  flex items-center justify-between">
             <ul className="flex items-center space-x-12 ">
-              <li className={`${Styles.nav_list}`}>
-                <Link
-                  to={"/"}
-                  className={`text-white text-sm font-semibold transition-colors duration-300 ease-in-out py-3 h-full block`}
+              {links.map((link, idx) => (
+                <li
+                  className={`${
+                    link.title.toLowerCase() === "recovery services"
+                      ? "flex items-center text-white gap-3"
+                      : ""
+                  } ${Styles.nav_list}`}
+                  key={idx}
                 >
-                  Home
-                </Link>
-              </li>
-              <li
-                className={`flex items-center text-white gap-3 ${Styles.nav_list}`}
-              >
-                <Link
-                  to={"/"}
-                  className={`text-white text-sm font-semibold transition-colors duration-300 ease-in-out py-3 h-full block`}
-                >
-                  Recovery Services
-                </Link>
-
-                <ChevronDown size={14} className="mt-1" />
-              </li>
-              <li className={`${Styles.nav_list}`}>
-                <Link
-                  to={"/"}
-                  className={`text-white text-sm font-semibold transition-colors duration-300 ease-in-out py-3 h-full block`}
-                >
-                  About Us
-                </Link>
-              </li>
-              <li className={`${Styles.nav_list}`}>
-                <Link
-                  to={"/"}
-                  className={`text-white text-sm font-semibold transition-colors duration-300 ease-in-out py-3 h-full block`}
-                >
-                  Blog
-                </Link>
-              </li>
-              <li className={`${Styles.nav_list}`}>
-                <Link
-                  to={"/"}
-                  className={`text-white text-sm font-semibold transition-colors duration-300 ease-in-out py-3 h-full block`}
-                >
-                  Contact Us
-                </Link>
-              </li>
+                  <Link
+                    to={"/"}
+                    className={`text-white text-sm font-semibold transition-colors duration-300 ease-in-out py-3 h-full block`}
+                  >
+                    {link.title}
+                  </Link>
+                  {link.title.toLowerCase() === "recovery services" && (
+                    <ChevronDown size={14} className="mt-1" />
+                  )}
+                </li>
+              ))}
             </ul>
             <div className="flex items-center text-white gap-4">
-              <Search className="cursor-pointer" />
+              <SearchIcon className="cursor-pointer" />
               <Menu className="cursor-pointer" />
             </div>
           </div>
