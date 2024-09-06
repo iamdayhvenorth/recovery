@@ -17,16 +17,16 @@ export default function Features() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-6 px-4">
             <div className="bg-[#30344d] rounded-md px-9 py-10 flex-1">
               <div className="flex flex-col items-center">
-                <div className="h-[119px] w-[119px] bg-transparent flex items-center justify-center border-2 relative rounded-full after:absolute after:h-[15px] after:w-[15px] after:bg-[#52c5b6] after:rounded-full after:left-[-10px] hover:animate-spin ">
+                <div className="h-[110px] w-[110px] bg-transparent flex items-center justify-center border-2 relative rounded-full after:absolute after:h-[15px] after:w-[15px] after:bg-[#52c5b6] after:rounded-full after:left-[-10px] ">
                   <div className="bg-[#52c5b6] flex items-center justify-center w-[80px] h-[80px] rounded-full text-white text-3xl absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                     <BsBarChartLine />
                   </div>
                 </div>
                 <div className="mt-4 text-center">
-                  <h5 className="block font-prata font-normal text-2xl mb-4 text-white">
+                  <h5 className="block font-prata font-normal text-lg lg:text-[1.2rem] mb-4 text-white">
                     Assessment
                   </h5>
-                  <p className="font-open-sans text-base font-normal text-white">
+                  <p className="font-open-sans text-sm md:text-base font-normal text-white">
                     After reaching out to us, we assess your claim and adjudge
                     the possibility of a recovery. We promise to inform you of
                     the chances of recovery.
@@ -37,13 +37,13 @@ export default function Features() {
 
             <div className="bg-[#f5f5f5] rounded-md px-9 py-10 flex-1">
               <div className="flex flex-col items-center">
-                <div>
+                <div className="h-[110px] w-[110px] bg-transparent flex items-center justify-center border-2 relative rounded-full after:absolute after:h-[15px] after:w-[15px] after:bg-[#30344d] after:rounded-full after:left-[-10px] ">
                   <div className="bg-[#30344d] flex items-center justify-center w-[80px] h-[80px] rounded-full text-white text-3xl">
                     <FaHourglass />
                   </div>
                 </div>
                 <div className="mt-4 text-center">
-                  <h5 className="block font-prata font-normal text-2xl mb-4">
+                  <h5 className="block font-prata font-normal text-lg lg:text-[1.2rem] mb-4">
                     Planning
                   </h5>
                   <p className="font-open-sans text-base font-normal">
@@ -57,16 +57,16 @@ export default function Features() {
 
             <div className="bg-[#52c5b6] rounded-md px-9 py-10 flex-1">
               <div className="flex flex-col items-center">
-                <div>
+                <div className="h-[110px] w-[110px] bg-transparent flex items-center justify-center border-2 relative rounded-full after:absolute after:h-[15px] after:w-[15px] after:bg-white after:rounded-full after:left-[-10px] ">
                   <div className="bg-[#ffffff] flex items-center text-black justify-center w-[80px] h-[80px] rounded-full text-3xl">
                     <HiOutlineRocketLaunch />
                   </div>
                 </div>
                 <div className="mt-4 text-center">
-                  <h5 className="block font-prata font-normal text-2xl mb-4 text-white">
+                  <h5 className="block font-prata font-normal text-lg lg:text-[1.2rem] mb-4 text-white">
                     Execution
                   </h5>
-                  <p className="font-open-sans text-base font-normal text-white">
+                  <p className="font-open-sans text-sm md:text-base font-normal text-white">
                     We execute our strategy to recover your money and we make
                     sure to carry you along with the whole process. Transparency
                     is very important to us.

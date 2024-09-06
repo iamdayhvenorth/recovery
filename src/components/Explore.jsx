@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import explore from "/images/explore.jpg";
 import { FaCheck } from "react-icons/fa";
 
@@ -70,9 +71,12 @@ export default function Explore() {
                 </div>
               </div>
               <div>
-                <button className="bg-[#52c5b6] uppercase text-white px-8 py-4 text-sm cursor-pointer rounded font-inter font-semibold hover:bg-black transition-colors duration-500 ease-in-out">
+                <Link
+                  to={"/"}
+                  className="bg-[#52c5b6] uppercase text-white px-8 py-4 text-sm cursor-pointer rounded font-inter font-semibold hover:bg-black transition-colors duration-500 ease-in-out"
+                >
                   Explore More
-                </button>
+                </Link>
               </div>
             </div>
           </div>

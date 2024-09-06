@@ -2,11 +2,12 @@ import React from "react";
 import image from "/images/image1.jpg";
 import avatar_1 from "/images/testi1.png";
 import { ImQuotesLeft } from "react-icons/im";
+import { FaAward } from "react-icons/fa";
 
 export default function Testimonials() {
   return (
     <section>
-      <div className="w-full border-red-900 max-w-[1200px] mx-auto">
+      <div className="w-full max-w-[1200px] mx-auto">
         <div>
           <div className="flex flex-col lg:flex-row items-center">
             {/* left content */}
@@ -56,6 +57,49 @@ export default function Testimonials() {
           </div>
         </div>
       </div>
+      <section className=" px-20 py-11 bg-[#52c5b6]">
+        <div className="w-full max-w-[1200px] mx-aut0 grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-white place-items-center">
+          <div className="flex flex-col p-4 items-center space-y-4 h-full w-full">
+            <div className="text-6xl">
+              <FaAward />
+            </div>
+            <span className="font-prata text-5xl font-normal block">4653</span>
+            <p className="font-open-sans text-base font-normal text-center">
+              <span className="block">Happy</span>
+              <span className="block">Clients</span>
+            </p>
+          </div>
+          <div className="flex flex-col p-4 items-center space-y-4  h-full w-full">
+            <div className="text-6xl">
+              <FaAward />
+            </div>
+            <span className="font-prata text-5xl font-normal block">4245</span>
+            <p className="font-open-sans text-base font-normal text-center">
+              <span className="block">Successful</span>
+              <span className="block">Cases</span>
+            </p>
+          </div>
+          <div className="flex flex-col p-4 items-center space-y-4 h-full w-full">
+            <div className="text-6xl">
+              <FaAward />
+            </div>
+            <span className="font-prata text-5xl font-normal block">10+</span>
+            <p className="font-open-sans text-base font-normal text-center">
+              <span>Years of Experience</span>
+            </p>
+          </div>
+          <div className="flex flex-col p-4 items-center space-y-4  h-full w-full">
+            <div className="text-6xl">
+              <FaAward />
+            </div>
+            <span className="font-prata text-5xl font-normal block">20+</span>
+            <p className="font-open-sans text-base font-normal text-center">
+              <span className="block">Team</span>
+              <span className="block">Members</span>
+            </p>
+          </div>
+        </div>
+      </section>
     </section>
   );
 }
