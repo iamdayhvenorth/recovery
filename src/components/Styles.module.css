@@ -56,9 +56,32 @@
   top: -100px;
   left: 0;
   width: 100%;
-  z-index: 20;
+  z-index: 30;
 }
 
-.animate {
-  animation: rotate 2s infinite linear;
+@media screen and (min-width: 1024px) {
+  .grid_transform:hover .overlay {
+    opacity: 1;
+  }
+  .grid_transform .sample {
+    max-height: 0;
+    transition: all 500ms ease-in;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  .grid_transform:hover .sample {
+    opacity: 1;
+    max-height: 100%;
+  }
+  .grid_transform:hover span {
+    color: #ff8f3e;
+  }
+  .grid_transform:hover .position {
+    top: 10px;
+  }
+
+  .col_1:hover div.background_img {
+    background: url("/images/money-bg.webp") center;
+  }
 }
