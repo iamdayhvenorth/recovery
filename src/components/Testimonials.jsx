@@ -58,7 +58,7 @@ export default function Testimonials() {
         </div>
       </div>
       <section className=" px-20 py-11 bg-[#52c5b6]">
-        <div className="w-full max-w-[1200px] mx-aut0 grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-white place-items-center">
+        <div className="w-full max-w-[1200px] mx-auto grid grid-col-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-white place-items-center">
           <div className="flex flex-col p-4 items-center space-y-4 h-full w-full">
             <div className="text-6xl">
               <FaAward />

@@ -9,10 +9,10 @@ import {
   ChevronDown,
 } from "lucide-react";
 import Styles from "./Styles.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { links } from "../data";
-import { FaArrowUp } from "react-icons/fa6";
+import { BsArrowUp } from "react-icons/bs";
 
 export default function Header() {
   const [scroll, setScroll] = useState(false);
@@ -20,9 +20,11 @@ export default function Header() {
   const [showSideBar, setShowSideBar] = useState(false);
   const [scrollToTop, setScrollToTop] = useState(false);
 
+  const { pathname } = useLocation();
+  console.log(pathname);
+
   function handleToggle() {
     setShowSideBar(true);
-    console.log("hello");
   }
 
   useEffect(() => {
@@ -53,7 +55,7 @@ export default function Header() {
     <>
       <header className="w-full">
         {/* header */}
-        <div className="w-full max-w-[1200px] mx-auto py-1 md:px-6 my_name">
+        <div className="w-full max-w-[1200px] mx-auto py-1 md:px-6">
           <div className="p-6 flex items-center md:justify-evenly justify-between w-full h-[90px] gap-6">
             <div className="w-[161px]">
               <Link to={"/"}>
@@ -121,7 +123,7 @@ export default function Header() {
         )}
 
         {/* mobile view sidebar */}
-        <nav
+        <aside
           className={`fixed top-0  w-[310px] bg-white z-50 h-full md:hidden transition-[right] duration-500 ease-in-out p-5 ${
             showSideBar ? "right-0 " : "right-[-1000px]"
           }`}
@@ -138,10 +140,15 @@ export default function Header() {
                 <li
                   className="list-item border-b border-black/10 font-inter text-sm font-medium"
                   key={idx}
+                  onClick={() => setShowSideBar(false)}
                 >
                   <Link
                     to={link.path}
-                    className="w-full block py-3 transition-colors duration-300 hover:text-[#52c5b6]"
+                    className={`w-full block py-3 transition-colors duration-300 hover:text-[#52c5b6] ${
+                      pathname.includes(link.path)
+                        ? "text-[#52c5b6]"
+                        : "text-black"
+                    }`}
                   >
                     {link.title}
                   </Link>
@@ -149,13 +156,13 @@ export default function Header() {
               ))}
             </ul>
           </div>
-        </nav>
+        </aside>
 
         {/* navbar */}
         <nav
           className={`w-full bg-[#30344d] h-[70px] hidden md:block transition-all duration-300 delay-300 shadow-md ${
             scroll ? "top-0  h-[70px]" : ""
-          } ${menuOpen ? Styles.my_name : ""}`}
+          } ${menuOpen ? Styles.navbar : ""}`}
         >
           <div className="w-full h-full max-w-[1200px] mx-auto   px-6">
             <div className="w-full h-full  px-6  flex items-center justify-between">
@@ -171,7 +178,11 @@ export default function Header() {
                   >
                     <Link
                       to={link.path}
-                      className={`text-white text-sm font-semibold transition-colors duration-300 ease-in-out py-3 h-full block`}
+                      className={`text-sm font-semibold transition-colors duration-300 ease-in-out py-3 h-full block ${
+                        pathname === link.path
+                          ? "text-[#52c5b6] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#52c5b6]"
+                          : "text-white"
+                      }`}
                     >
                       {link.title}
                     </Link>
@@ -189,13 +200,14 @@ export default function Header() {
           </div>
         </nav>
       </header>
+
       <div
-        className={`fixed bottom-7 right-5 bg-[#52c5b6] rounded-md h-[46px] w-[46px] flex items-center justify-center text-xl cursor-pointer text-white z-[999] transition-all duration-300 ease-linear hover:-translate-y-2 ${
-          scrollToTop ? "opacity-1" : "opacity-0"
+        className={`fixed  right-5 bg-[#52c5b6] rounded-md h-[46px] w-[46px] flex items-center justify-center text-xl cursor-pointer text-white z-[999] transition-all duration-300 ease-linear hover:-translate-y-2 ${
+          scrollToTop ? "opacity-1 bottom-7" : "opacity-0 bottom-0"
         }`}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
-        <FaArrowUp />
+        <BsArrowUp />
       </div>
     </>
   );

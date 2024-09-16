@@ -85,7 +85,8 @@ export default function Footer() {
         </div>
         <div className="py-6">
           <p className="font-open-sans font-normal text-sm text-[#879DAD] text-center">
-            Copyright 2022 MAFG RIA Service, Inc. All Rights Reserved.
+            Copyright &copy; {new Date().getFullYear()} MAFG RIA Service, Inc.
+            All Rights Reserved.
           </p>
         </div>
       </div>
