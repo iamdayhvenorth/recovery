@@ -1,19 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { RxCaretRight } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import { blogs as blogsData, recentPosts } from "../data";
 
 export default function Blog() {
-  const [blogs, setBlog] = useState(blogsData);
-  const [category, SetCategory] = useState("all");
+  const [blogs] = useState(blogsData);
 
-  let blogContent = blogs.filter((blog) => {
-    return blog.category === category || category === "all";
-  });
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const query = searchParams.get("category");
+  const sectionRef = useRef(null);
+
+  const handleClick = (cat) => {
+    setSearchParams({ category: cat });
+  };
+
+  const displayed =
+    query === null
+      ? blogs
+      : blogs.filter((x) => x.category.toLowerCase() === query.toLowerCase());
+
+  useEffect(() => {
+    if (query) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
 
   const uniqueCat = new Set(blogsData.map((x) => x.category));
-  const categories = ["all", ...uniqueCat];
+  const categories = [...uniqueCat];
 
   return (
     <>
@@ -42,35 +57,49 @@ export default function Blog() {
           </div>
         </div>
       </section>
-      <section className="w-full">
+      <section className="w-full" ref={sectionRef}>
         <div className="w-full max-w-[1200px] mx-auto py-16 lg:py-24 px-4 lg:px-12">
           <div className="flex flex-col lg:flex-row gap-14 md:gap-0">
             <div className="flex-1 flex flex-col gap-14  p-4">
               <div className="pt-6 flex gap-2 flex-wrap">
+                <button
+                  onClick={() => setSearchParams("")}
+                  className={`pt-[7px] pb-[6px]  px-3 rounded-xl uppercase  text-white hover:bg-black text-[0.6875rem] font-inter font-bold ${
+                    query === null ? "bg-black" : "bg-[#52c5b6]"
+                  }`}
+                >
+                  All
+                </button>
                 {categories.map((cat) => (
                   <button
                     key={cat}
                     className={`pt-[7px] pb-[6px]  px-3 rounded-xl uppercase  text-white hover:bg-black text-[0.6875rem] font-inter font-bold ${
-                      category.toLowerCase() === cat.toLowerCase()
+                      query?.toLowerCase() === cat.toLowerCase()
                         ? "bg-black"
                         : "bg-[#52c5b6]"
                     }`}
-                    onClick={() => SetCategory(cat)}
+                    onClick={() => handleClick(cat)}
                   >
                     {cat}
                   </button>
                 ))}
               </div>
-              {blogContent.map((blog) => (
+              {displayed.map((blog) => (
                 <div
                   className="rounded-md shadow-[0px_0px_19px_1px_rgba(0,0,0,0.10)]"
                   key={blog.id}
                 >
                   <div className="border-b p-6">
                     <div className="mb-5">
-                      <Link className="pt-[7px] pb-[6px]  px-3 rounded-xl uppercase bg-[#52c5b6] text-white hover:bg-black text-[0.6875rem] font-inter font-bold">
+                      <span
+                        className={`pt-[7px] pb-[6px]  px-3 rounded-xl uppercase  text-white  text-[0.6875rem] font-inter font-bold ${
+                          query?.toLowerCase() === blog.category.toLowerCase()
+                            ? "bg-black"
+                            : "bg-[#52c5b6]"
+                        }`}
+                      >
                         {blog.category}
-                      </Link>
+                      </span>
                     </div>
                     <h4 className="mb-4">
                       <Link
@@ -92,7 +121,7 @@ export default function Blog() {
                     </p>
                     <Link
                       className="font-inter text-[0.8125rem] font-semibold leading-7 block rounded-sm bg-[#ededed] text-[#1b1d21] p-2 border border-transparent transition-colors duration-300 ease-in-out hover:text-[#52c5b6] hover:border-[#52c5b6] hover:bg-[#edf9f8]"
-                      to={"2"}
+                      to={`/blog/${blog.path}`}
                     >
                       <BsArrowRight />
                     </Link>

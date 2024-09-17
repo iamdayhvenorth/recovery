@@ -21,7 +21,6 @@ export default function Header() {
   const [scrollToTop, setScrollToTop] = useState(false);
 
   const { pathname } = useLocation();
-  console.log(pathname);
 
   function handleToggle() {
     setShowSideBar(true);

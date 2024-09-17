@@ -29,7 +29,10 @@ export default function BlogDetails() {
               </li>
               <RxCaretRight className="text-white/60 text-xl" />
               <li>
-                <Link className="block text-sm font-semibold font-inter text-white">
+                <Link
+                  to={"/blog"}
+                  className="block text-sm font-semibold font-inter text-white"
+                >
                   Blog
                 </Link>
               </li>

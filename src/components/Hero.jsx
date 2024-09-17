@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Form from "./Form";
 import Styles from "./Styles.module.css";
 
@@ -23,12 +24,12 @@ export default function Hero() {
                 right place. We apply global best practices to ensure we get
                 your money back.
               </p>
-              <a
-                href="#"
+              <Link
+                to={"/about"}
                 className="bg-[#61ce70] py-3 px-4 text-xs rounded-sm w-fit font-semibold"
               >
                 About Us
-              </a>
+              </Link>
             </div>
 
             {/* Form section */}
