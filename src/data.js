@@ -51,6 +51,28 @@ export const accordion = [
     {
       title: "Recovery Services",
       path: "/services",
+      sublinks: [
+        {
+          title: "Binary Options",
+          path: "/services/binary-options",
+        },
+        {
+          title: "CFD Trading Scam",
+          path: "/services/cfd-trading-scam",
+        },
+        {
+          title: "Forex",
+          path: "/services/forex",
+        },
+        {
+          title: "Cryptocurrency",
+          path: "/services/crypto-currency",
+        },
+        {
+          title: "MT760MT799 Fraud",
+          path: "/services/mt760-mt799-fraud",
+        },
+      ]
     },
     {
       title: "About Us",

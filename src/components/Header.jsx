@@ -19,6 +19,7 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showSideBar, setShowSideBar] = useState(false);
   const [scrollToTop, setScrollToTop] = useState(false);
+  const [subFolder, setSubFolder] = useState(false);
 
   const { pathname } = useLocation();
 
@@ -123,7 +124,7 @@ export default function Header() {
 
         {/* mobile view sidebar */}
         <aside
-          className={`fixed top-0  w-[310px] bg-white z-50 h-full md:hidden transition-[right] duration-500 ease-in-out p-5 ${
+          className={`fixed top-0  w-[310px] bg-white z-50 h-full md:hidden transition-[right] duration-500 ease-in-out p-5 overflow-y-auto ${
             showSideBar ? "right-0 " : "right-[-1000px]"
           }`}
         >
@@ -137,20 +138,52 @@ export default function Header() {
             <ul className="w-full flex flex-col">
               {links.map((link, idx) => (
                 <li
-                  className="list-item border-b border-black/10 font-inter text-sm font-medium"
+                  className={` font-inter text-sm font-medium ${
+                    link.title.toLowerCase() === "recovery services"
+                      ? " relative"
+                      : ""
+                  }`}
                   key={idx}
-                  onClick={() => setShowSideBar(false)}
+                  onClick={() =>
+                    link.path !== "/services"
+                      ? setShowSideBar(false)
+                      : setSubFolder(!subFolder)
+                  }
                 >
                   <Link
-                    to={link.path}
-                    className={`w-full block py-3 transition-colors duration-300 hover:text-[#52c5b6] ${
-                      pathname.includes(link.path)
-                        ? "text-[#52c5b6]"
-                        : "text-black"
-                    }`}
+                    to={link.path !== "/services" ? link.path : "#"}
+                    className={`w-full block py-3 transition-colors duration-300 hover:text-[#52c5b6] border-b border-black/10 ${
+                      pathname === link.path ? "text-[#52c5b6]" : "text-black"
+                    } `}
                   >
                     {link.title}
                   </Link>
+
+                  {link.title.toLowerCase() === "recovery services" && (
+                    <ChevronDown
+                      size={18}
+                      className={`mt-1 -rotate-90 mr-2 cursor-pointer absolute right-0 top-3`}
+                    />
+                  )}
+
+                  {link.title.toLowerCase() === "recovery services" && (
+                    <ul
+                      className={`ml-3 block overflow-hidden transition-all duration-500 ease-in-out ${
+                        subFolder ? "h-[234.583px]" : "h-0"
+                      }`}
+                    >
+                      {link.sublinks.map((sub, idx) => (
+                        <li key={idx}>
+                          <Link
+                            to={sub.path}
+                            className="py-3 block border-b border-black/10 transition-colors duration-200 ease-linear hover:text-[#52c5b6]"
+                          >
+                            {sub.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </li>
               ))}
             </ul>
@@ -170,27 +203,67 @@ export default function Header() {
                   <li
                     className={`${
                       link.title.toLowerCase() === "recovery services"
-                        ? "flex items-center text-white gap-3"
+                        ? "flex items-center text-white gap-3 relative overflow-hidden hover:overflow-visible"
                         : ""
                     } ${Styles.nav_list}`}
                     key={idx}
                   >
                     <Link
-                      to={link.path}
-                      className={`text-sm font-semibold transition-colors duration-300 ease-in-out py-3 h-full block ${
+                      to={link.path !== "/services" ? link.path : "#"}
+                      className={`text-sm font-semibold transition-colors duration-300 ease-in-out py-4 h-full block ${
                         pathname === link.path
-                          ? "text-[#52c5b6] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#52c5b6]"
+                          ? "text-[#52c5b6] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#52c5b6] "
                           : "text-white"
                       }`}
                     >
                       {link.title}
                     </Link>
                     {link.title.toLowerCase() === "recovery services" && (
-                      <ChevronDown size={14} className="mt-1" />
+                      <ChevronDown
+                        size={14}
+                        className={`mt-1 ${
+                          pathname === link.path
+                            ? "text-[#52c5b6]"
+                            : "text-white"
+                        }`}
+                      />
                     )}
+
+                    {link.title.toLowerCase() === "recovery services" ? (
+                      <ul
+                        className={` rounded divide-y-[1px] before:absolute before:h-3 before:w-3 before:left-[40px] before:bg-white before:-top-[6px] before:rotate-45 hidden md:flex md:flex-col ${Styles.sub_menu} `}
+                      >
+                        <li>
+                          <Link className="block py-2 px-8 font-inter text-sm font-semibold transition-colors duration-200 ease-linear text-black hover:bg-[#f5f5f5] hover:text-[#52c5b6]">
+                            Binary Options
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="block py-2 px-8 font-inter text-sm font-semibold transition-colors duration-200 ease-linear text-black hover:bg-[#f5f5f5] hover:text-[#52c5b6]">
+                            CFD Trading Scam
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="block py-2 px-8 font-inter text-sm font-semibold transition-colors duration-200 ease-linear text-black hover:bg-[#f5f5f5] hover:text-[#52c5b6]">
+                            Forex
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="block py-2 px-8 font-inter text-sm font-semibold transition-colors duration-200 ease-linear text-black hover:bg-[#f5f5f5] hover:text-[#52c5b6]">
+                            CryptoCurrency
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="block py-2 px-8 font-inter text-sm font-semibold transition-colors duration-200 ease-linear text-black hover:bg-[#f5f5f5] hover:text-[#52c5b6]">
+                            MT760/MT799 Fraud
+                          </Link>
+                        </li>
+                      </ul>
+                    ) : null}
                   </li>
                 ))}
               </ul>
+
               <div className="flex items-center text-white gap-4">
                 <SearchIcon className="cursor-pointer" />
                 <Menu className="cursor-pointer" />
@@ -200,14 +273,14 @@ export default function Header() {
         </nav>
       </header>
 
-      <div
+      <button
         className={`fixed  right-5 bg-[#52c5b6] rounded-md h-[46px] w-[46px] flex items-center justify-center text-xl cursor-pointer text-white z-[999] transition-all duration-300 ease-linear hover:-translate-y-2 ${
           scrollToTop ? "opacity-1 bottom-7" : "opacity-0 bottom-0"
         }`}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
         <BsArrowUp />
-      </div>
+      </button>
     </>
   );
 }
