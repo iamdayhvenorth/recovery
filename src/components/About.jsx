@@ -11,12 +11,12 @@ export default function About() {
           <div className="p-2 h-full w-full lg:w-1/2 ">
             <div>
               <div className="mb-6">
-                <h2 className="text-sm font-inter font-semibold text-[#52c5b6] mb-3 uppercase">
+                <h2 className="text-3xl font-inter font-semibold text-[#52c5b6] mb-3 uppercase">
                   Mafg Ria Service
                 </h2>
-                <h2 className="text-3xl lg:text-4xl font-prata font-normal text-white">
+                {/* <h2 className="text-3xl lg:text-4xl font-prata font-normal text-white">
                   About Us
-                </h2>
+                </h2> */}
               </div>
               <Accordion />
             </div>

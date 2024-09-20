@@ -13,6 +13,7 @@ import { Link, useLocation } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { links } from "../data";
 import { BsArrowUp } from "react-icons/bs";
+import { RiWhatsappFill } from "react-icons/ri";
 
 export default function Header() {
   const [scroll, setScroll] = useState(false);
@@ -173,7 +174,7 @@ export default function Header() {
                       }`}
                     >
                       {link.sublinks.map((sub, idx) => (
-                        <li key={idx}>
+                        <li key={idx} onClick={() => setShowSideBar(false)}>
                           <Link
                             to={sub.path}
                             className="py-3 block border-b border-black/10 transition-colors duration-200 ease-linear hover:text-[#52c5b6]"
@@ -233,31 +234,16 @@ export default function Header() {
                       <ul
                         className={` rounded divide-y-[1px] before:absolute before:h-3 before:w-3 before:left-[40px] before:bg-white before:-top-[6px] before:rotate-45 hidden md:flex md:flex-col ${Styles.sub_menu} `}
                       >
-                        <li>
-                          <Link className="block py-2 px-8 font-inter text-sm font-semibold transition-colors duration-200 ease-linear text-black hover:bg-[#f5f5f5] hover:text-[#52c5b6]">
-                            Binary Options
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="block py-2 px-8 font-inter text-sm font-semibold transition-colors duration-200 ease-linear text-black hover:bg-[#f5f5f5] hover:text-[#52c5b6]">
-                            CFD Trading Scam
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="block py-2 px-8 font-inter text-sm font-semibold transition-colors duration-200 ease-linear text-black hover:bg-[#f5f5f5] hover:text-[#52c5b6]">
-                            Forex
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="block py-2 px-8 font-inter text-sm font-semibold transition-colors duration-200 ease-linear text-black hover:bg-[#f5f5f5] hover:text-[#52c5b6]">
-                            CryptoCurrency
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="block py-2 px-8 font-inter text-sm font-semibold transition-colors duration-200 ease-linear text-black hover:bg-[#f5f5f5] hover:text-[#52c5b6]">
-                            MT760/MT799 Fraud
-                          </Link>
-                        </li>
+                        {link.sublinks.map((sub, idx) => (
+                          <li>
+                            <Link
+                              to={sub.path}
+                              className="block py-2 px-8 font-inter text-sm font-semibold transition-colors duration-200 ease-linear text-black hover:bg-[#f5f5f5] hover:text-[#52c5b6]"
+                            >
+                              {sub.title}
+                            </Link>
+                          </li>
+                        ))}
                       </ul>
                     ) : null}
                   </li>

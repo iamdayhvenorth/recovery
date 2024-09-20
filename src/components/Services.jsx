@@ -1,4 +1,12 @@
 import React from "react";
+import { PiHandshake } from "react-icons/pi";
+import {
+  IoBarChartOutline,
+  IoBriefcaseOutline,
+  IoListOutline,
+} from "react-icons/io5";
+
+import Styles from "./Styles.module.css";
 
 export default function Services() {
   return (
@@ -15,9 +23,17 @@ export default function Services() {
             </p>
           </div>
           <section className="grid grid-cols-1 md:grid-cols-2 py-4 px-2 gap-7">
-            <div className="flex  ">
-              <div className="">X</div>
-              <div className="flex flex-col pb-6 border-b border-[#E5E5E5] hover:border-[#52c5b6] transition-colors duration-500">
+            <div className={`flex gap-3 ${Styles.border_color}`}>
+              <div className="flex items-start gap-4">
+                <div className="w-[30%]">
+                  <div className="w-[75px] h-[75px] bg-[#52c5b6] flex items-center justify-center rounded-full  text-3xl text-white">
+                    <IoBarChartOutline />
+                  </div>
+                </div>
+              </div>
+              <div
+                className={`flex flex-col pb-6 border-b border-[#E5E5E5] ${Styles.border_hover}`}
+              >
                 <h5 className="font-inter font-medium text-xl mb-3">
                   Funds Recovery
                 </h5>
@@ -27,9 +43,17 @@ export default function Services() {
                 </p>
               </div>
             </div>
-            <div className="flex  ">
-              <div className="">X</div>
-              <div className="flex flex-col pb-6 border-b border-[#E5E5E5] hover:border-[#52c5b6] transition-colors duration-500">
+            <div className={`flex gap-3 ${Styles.border_color}`}>
+              <div className="flex items-start gap-4">
+                <div className="w-[30%]">
+                  <div className="w-[75px] h-[75px] bg-[#52c5b6] flex items-center justify-center rounded-full  text-3xl text-white">
+                    <IoListOutline />
+                  </div>
+                </div>
+              </div>
+              <div
+                className={`flex flex-col pb-6 border-b border-[#E5E5E5] ${Styles.border_hover}`}
+              >
                 <h5 className="font-inter font-medium text-xl mb-3">
                   Investment Advising
                 </h5>
@@ -39,9 +63,17 @@ export default function Services() {
                 </p>
               </div>
             </div>
-            <div className="flex  ">
-              <div className="">X</div>
-              <div className="flex flex-col pb-6 border-b border-[#E5E5E5] hover:border-[#52c5b6] transition-colors duration-500">
+            <div className={`flex gap-3 ${Styles.border_color}`}>
+              <div className="flex items-start gap-4">
+                <div className="w-[30%]">
+                  <div className="w-[75px] h-[75px] bg-[#52c5b6] flex items-center justify-center rounded-full  text-3xl text-white">
+                    <PiHandshake />
+                  </div>
+                </div>
+              </div>
+              <div
+                className={`flex flex-col pb-6 border-b border-[#E5E5E5] ${Styles.border_hover}`}
+              >
                 <h5 className="font-inter font-medium text-xl mb-3">
                   Intelligence Gathering
                 </h5>
@@ -52,9 +84,17 @@ export default function Services() {
                 </p>
               </div>
             </div>
-            <div className="flex  ">
-              <div className="">X</div>
-              <div className="flex flex-col pb-6 border-b border-[#E5E5E5] hover:border-[#52c5b6] transition-colors duration-500">
+            <div className={`flex gap-3 ${Styles.border_color}`}>
+              <div className="flex items-start gap-4">
+                <div className="w-[30%]">
+                  <div className="w-[75px] h-[75px] bg-[#52c5b6] flex items-center justify-center rounded-full  text-3xl text-white">
+                    <IoBriefcaseOutline />
+                  </div>
+                </div>
+              </div>
+              <div
+                className={`flex flex-col pb-6 border-b border-[#E5E5E5] ${Styles.border_hover}`}
+              >
                 <h5 className="font-inter font-medium text-xl mb-3">
                   Claims Assessment
                 </h5>

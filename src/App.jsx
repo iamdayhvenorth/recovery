@@ -5,6 +5,11 @@ import Contact from "./pages/Contact";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import BlogDetails from "./pages/BlogDetails";
+import TradingScam from "./pages/TradingScam";
+import BinaryOptions from "./pages/BinaryOptions";
+import CryptoCurrency from "./pages/CryptoCurrency";
+import MtFraud from "./pages/MtFraud";
+import Forex from "./pages/Forex";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +34,26 @@ const router = createBrowserRouter([
       {
         path: "/blog/:blog_details",
         element: <BlogDetails />,
+      },
+      {
+        path: "/cfd-trading-scam",
+        element: <TradingScam />,
+      },
+      {
+        path: "/binary-options",
+        element: <BinaryOptions />,
+      },
+      {
+        path: "/crypto-currency",
+        element: <CryptoCurrency />,
+      },
+      {
+        path: "/mt760-mt799-fraud",
+        element: <MtFraud />,
+      },
+      {
+        path: "/forex",
+        element: <Forex />,
       },
       {
         path: "*",

@@ -82,6 +82,12 @@
   width: 100%;
   z-index: 30;
 }
+.border_color .border_hover {
+  transition: all 400ms ease-in-out;
+}
+.border_color:hover .border_hover {
+  border-color: #52c5b6;
+}
 
 @media screen and (min-width: 1024px) {
   .grid_transform:hover .overlay {

@@ -28,16 +28,16 @@ export const accordion = [
       amount_recovered: "$162k Recovered"
     },
     {
-      name: "Oliver Simson",
-      description: "I’m so grateful I came in contact with MAFG RIA Service, they were able to recover .",
+      name: "Samanta Fox",
+      description: "“Since I’ve been scammed, I was already in a fragile position, which they considered legitimate and understandable. It was a happy ending at last as my money was recovered.”",
       image: avatar_2,
-      amount_recovered: "$162k Recovered"
+      amount_recovered: "$574k Recovered"
     },
     {
-      name: "Oliver Simson",
-      description: "I’m so grateful I came in contact with MAFG RIA Service, they were able to recover my money . I highly recommend them. Done in time. I really appreciate the timely help. You should try them too.",
+      name: "Mary Grey",
+      description: "“They are experts and are extremely dedicated to the process of data collection, analysis and eventually providing the best outcome possible. They helped in recovering my funds from start to finish.”",
       image: avatar_3,
-      amount_recovered: "$162k Recovered"
+      amount_recovered: "$364k Recovered"
     },
 
   ]
@@ -54,23 +54,23 @@ export const accordion = [
       sublinks: [
         {
           title: "Binary Options",
-          path: "/services/binary-options",
+          path: "/binary-options",
         },
         {
           title: "CFD Trading Scam",
-          path: "/services/cfd-trading-scam",
+          path: "/cfd-trading-scam",
         },
         {
           title: "Forex",
-          path: "/services/forex",
+          path: "/forex",
         },
         {
           title: "Cryptocurrency",
-          path: "/services/crypto-currency",
+          path: "/crypto-currency",
         },
         {
           title: "MT760MT799 Fraud",
-          path: "/services/mt760-mt799-fraud",
+          path: "/mt760-mt799-fraud",
         },
       ]
     },

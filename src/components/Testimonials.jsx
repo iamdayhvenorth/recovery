@@ -3,6 +3,7 @@ import image from "/images/image1.jpg";
 import avatar_1 from "/images/testi1.png";
 import { ImQuotesLeft } from "react-icons/im";
 import { FaAward } from "react-icons/fa";
+import TestimonialCard from "./TestimonialCard";
 
 export default function Testimonials() {
   return (
@@ -27,30 +28,7 @@ export default function Testimonials() {
                     </h2>
                   </div>
                   {/* testimonial card content */}
-                  <div className="flex flex-col w-full items-center gap-6 p-2">
-                    {/* profile avatar */}
-                    <div className="relative w-[90px] h-[90px] rounded-full">
-                      <img src={avatar_1} alt="author" />
-                      <div className="w-11 h-11 rounded-full bg-[#52c5b6] absolute -top-4 -right-4 flex items-center justify-center text-white">
-                        <ImQuotesLeft />
-                      </div>
-                    </div>
-                    {/* testimonial desc */}
-                    <article className="text-center text-white font-light font-open-sans text-lg">
-                      "I’m so grateful I came in contact with MAFG RIA Service,
-                      they were able to recover my money . I highly recommend
-                      them. Done in time. I really appreciate the timely help.
-                      You should try them too."
-                    </article>
-                    <div className="text-center">
-                      <h5 className="font-prata font-normal text-white text-xl lg:text-2xl mb-[2px]">
-                        Oliver Simson
-                      </h5>
-                      <span className="text-center text-[#52c5bc] font-inter text-sm font-semibold">
-                        $162K Recovered
-                      </span>
-                    </div>
-                  </div>
+                  <TestimonialCard />
                 </div>
               </div>
             </section>
