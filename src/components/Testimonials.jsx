@@ -23,12 +23,14 @@ export default function Testimonials() {
                     <h5 className="font-inter text-sm font-semibold text-[#52c5b6] mb-3">
                       Testimonials
                     </h5>
-                    <h2 className="text-center font-prata font-normal text-2xl md:text-3xl lg:text-[2.625rem] lg:leading-[1] text-white">
+                    <h2 className="text-center font-prata font-normal text-2xl md:text-3xl   text-white">
                       What Clients Say About Us
                     </h2>
                   </div>
                   {/* testimonial card content */}
-                  <TestimonialCard />
+                  <div className="text-white ">
+                    <TestimonialCard />
+                  </div>
                 </div>
               </div>
             </section>

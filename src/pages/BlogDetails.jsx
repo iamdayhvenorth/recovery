@@ -6,6 +6,7 @@ import CommentForm from "../components/CommentForm";
 
 import author_img from "/images/author_avatar.png";
 import { recentPosts } from "../data";
+import { Helmet } from "react-helmet";
 
 export default function BlogDetails() {
   const { blog_details } = useParams();
@@ -48,6 +49,9 @@ export default function BlogDetails() {
       </section>
 
       <section className="w-full">
+        <Helmet>
+          <title> Blog Details</title>
+        </Helmet>
         <div className="w-full max-w-[1200px] mx-auto py-16 lg:py-24 px-2 md:px-4">
           <div className="flex flex-col lg:flex-row gap-14 md:gap-0">
             <article className="flex-1 flex flex-col gap-14 p-4">

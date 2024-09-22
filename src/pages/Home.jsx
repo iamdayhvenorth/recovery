@@ -7,10 +7,14 @@ import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import Consultation from "../components/Consultation";
 import Document from "../components/Document";
+import { Helmet } from "react-helmet";
 
 export default function Home() {
   return (
     <>
+      <Helmet>
+        <title> Scam Recovery</title>
+      </Helmet>
       <Hero />
       <Features />
       <Experience />

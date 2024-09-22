@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { RxCaretRight } from "react-icons/rx";
 import { Link } from "react-router-dom";
 
@@ -31,6 +32,9 @@ export default function TradingScam() {
         </div>
       </section>
       <section>
+        <Helmet>
+          <title> Trading Scam</title>
+        </Helmet>
         <div className="w-full max-w-[1200px] mx-auto  py-16 md:py-24 px-6 md:px-12">
           <div>
             <div className="mb-3">

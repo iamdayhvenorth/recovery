@@ -29,11 +29,11 @@ export default function TestimonialCard() {
               </div>
             </div>
             {/* testimonial desc */}
-            <article className="text-center text-white font-light font-open-sans text-lg">
+            <article className="text-center  font-light font-open-sans text-lg">
               {x.description}
             </article>
             <div className="text-center">
-              <h5 className="font-prata font-normal text-white text-xl lg:text-2xl mb-[2px]">
+              <h5 className="font-prata font-normal  text-xl lg:text-2xl mb-[2px]">
                 {x.name}
               </h5>
               <span className="text-center text-[#52c5bc] font-inter text-sm font-semibold">

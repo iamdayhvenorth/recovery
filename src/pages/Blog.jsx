@@ -3,6 +3,7 @@ import { RxCaretRight } from "react-icons/rx";
 import { Link, useSearchParams } from "react-router-dom";
 import { BsArrowRight } from "react-icons/bs";
 import { blogs as blogsData, recentPosts } from "../data";
+import { Helmet } from "react-helmet";
 
 export default function Blog() {
   const [blogs] = useState(blogsData);
@@ -58,6 +59,9 @@ export default function Blog() {
         </div>
       </section>
       <section className="w-full" ref={sectionRef}>
+        <Helmet>
+          <title>Blog</title>
+        </Helmet>
         <div className="w-full max-w-[1200px] mx-auto py-16 lg:py-24 px-4 lg:px-12">
           <div className="flex flex-col lg:flex-row gap-14 md:gap-0">
             <div className="flex-1 flex flex-col gap-14  p-4">

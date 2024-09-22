@@ -32,8 +32,8 @@ export default function CommentForm() {
             required
           />
         </div>
-        <div className="flex items-center gap-4 mb-3">
-          <input type="checkbox" name="save" id="save" />
+        <div className="flex items-start gap-4 mb-3">
+          <input type="checkbox" name="save" id="save" className="mt-2" />
           <label
             htmlFor="save"
             className="font-open-sans text-sm font-normal text-[#5f5f5f]"

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { RxCaretRight } from "react-icons/rx";
 import { IoIosCall, IoIosSend } from "react-icons/io";
 import { MdLocationOn } from "react-icons/md";
+import { Helmet } from "react-helmet";
 
 export default function Contact() {
   return (
@@ -33,6 +34,9 @@ export default function Contact() {
         </div>
       </section>
       <section>
+        <Helmet>
+          <title>Contact</title>
+        </Helmet>
         <div className="w-full max-w-[1200px] mx-auto p-4 md:px-12">
           <div className="p-2 flex flex-col gap-4">
             <div>

@@ -13,7 +13,8 @@ import { Link, useLocation } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { links } from "../data";
 import { BsArrowUp } from "react-icons/bs";
-import { RiWhatsappFill } from "react-icons/ri";
+import Search from "./Search";
+import { MdClose } from "react-icons/md";
 
 export default function Header() {
   const [scroll, setScroll] = useState(false);
@@ -21,11 +22,19 @@ export default function Header() {
   const [showSideBar, setShowSideBar] = useState(false);
   const [scrollToTop, setScrollToTop] = useState(false);
   const [subFolder, setSubFolder] = useState(false);
+  const [showSearchInput, setShowSearchInput] = useState(true);
 
   const { pathname } = useLocation();
 
   function handleToggle() {
     setShowSideBar(true);
+  }
+
+  function whatsappLink() {
+    window.open(
+      "https://api.whatsapp.com/send/?phone=09012341278&text&type=phone_number&app_absent=0",
+      "_blank"
+    );
   }
 
   useEffect(() => {
@@ -163,7 +172,9 @@ export default function Header() {
                   {link.title.toLowerCase() === "recovery services" && (
                     <ChevronDown
                       size={18}
-                      className={`mt-1 -rotate-90 mr-2 cursor-pointer absolute right-0 top-3`}
+                      className={`mt-1  mr-2 cursor-pointer absolute right-0 top-3 transition-all duration-300 ease-in-out ${
+                        subFolder ? "rotate-0" : "-rotate-90"
+                      }`}
                     />
                   )}
 
@@ -235,7 +246,7 @@ export default function Header() {
                         className={` rounded divide-y-[1px] before:absolute before:h-3 before:w-3 before:left-[40px] before:bg-white before:-top-[6px] before:rotate-45 hidden md:flex md:flex-col ${Styles.sub_menu} `}
                       >
                         {link.sublinks.map((sub, idx) => (
-                          <li>
+                          <li key={idx}>
                             <Link
                               to={sub.path}
                               className="block py-2 px-8 font-inter text-sm font-semibold transition-colors duration-200 ease-linear text-black hover:bg-[#f5f5f5] hover:text-[#52c5b6]"
@@ -250,9 +261,19 @@ export default function Header() {
                 ))}
               </ul>
 
-              <div className="flex items-center text-white gap-4">
-                <SearchIcon className="cursor-pointer" />
+              <div className="flex items-center text-white gap-4 relative">
+                <button onClick={() => setShowSearchInput(!showSearchInput)}>
+                  {showSearchInput ? (
+                    <MdClose className="cursor-pointer text-3xl" />
+                  ) : (
+                    <SearchIcon className="cursor-pointer" />
+                  )}
+                </button>
                 <Menu className="cursor-pointer" />
+                <Search
+                  setShowSearchInput={setShowSearchInput}
+                  showSearchInput={showSearchInput}
+                />
               </div>
             </div>
           </div>
@@ -260,12 +281,23 @@ export default function Header() {
       </header>
 
       <button
-        className={`fixed  right-5 bg-[#52c5b6] rounded-md h-[46px] w-[46px] flex items-center justify-center text-xl cursor-pointer text-white z-[999] transition-all duration-300 ease-linear hover:-translate-y-2 ${
+        className={`fixed  right-5 bg-[#52c5b6] rounded-md h-[46px] w-[46px] flex items-center justify-center text-xl cursor-pointer text-white z-[999] transition-all duration-300 ease-linear hover:-translate-y-2 shadow-[0px_0px_19px_1px_rgba(0,0,0,0.10)]  ${
           scrollToTop ? "opacity-1 bottom-7" : "opacity-0 bottom-0"
         }`}
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
         <BsArrowUp />
+      </button>
+
+      <button
+        className="fixed bottom-5 left-5 z-[999] cursor-pointer "
+        onClick={() => whatsappLink()}
+      >
+        <img
+          src="/images/icons8-whatsapp.svg"
+          alt="whatsapp-=icon"
+          className="w-[50px] h-[50px]"
+        />
       </button>
     </>
   );
